@@ -4,7 +4,7 @@
 #' summary statistics for the model.
 #'
 #' @param dat a dataframe.
-#' @param totalnewPrediction a matrix of predictions.
+#' @param totalnewprediction a matrix of predictions.
 #' @param totalprobabilities a matrix of prediction probabilities.
 #' @param clinGroup a string indicating the clinical group of interest.
 #' @param mcPerf is the performance from the pervious iteration.

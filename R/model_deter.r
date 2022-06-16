@@ -9,6 +9,7 @@
 #' @param grid is a matrix of hyperparam tuning values.
 #' @param mcRep is a numeric value indicating the number of iterations of
 #' bootstrapping are desired.
+#' @param clinGroup is a string indicating the clinical group of interest.
 #' @return it saves a csv of probabilities and a csv of summary statistics.
 #' @export
 #'
