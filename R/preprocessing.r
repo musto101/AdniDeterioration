@@ -61,6 +61,8 @@ preprocessing <- function(dat, perc, clinGroup) {
     cn_progress$DXDementia <- NULL
     cn_progress$DXMCI <- NULL
 
+  } else {
+    stop('clinGroup needs to be either CN or MCI. Please try again.')
   }
 
   return(cn_progress)
