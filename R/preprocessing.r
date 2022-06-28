@@ -41,25 +41,25 @@ preprocessing <- function(dat, perc, clinGroup) {
 
   if (clinGroup == 'CN') {
 
-  cn_progress <- data_numeric[data_numeric$DXCN == 1,]
+  cn_progress <- data_numeric[data_numeric$DX.CN == 1,]
   cn_progress$last_DX <- factor(ifelse(cn_progress$last_DX == 'CN',
                                        'CN', 'MCI_AD'),
                                 levels = c('CN', 'MCI_AD'))
 
-  cn_progress$DXCN <- NULL
-  cn_progress$DXDementia <- NULL
-  cn_progress$DXMCI <- NULL
+  cn_progress$DX.CN <- NULL
+  cn_progress$DX.Dementia <- NULL
+  cn_progress$DX.MCI <- NULL
 
   } else if (clinGroup == 'MCI') {
 
-    cn_progress <- data_numeric[data_numeric$DXMCI == 1,]
+    cn_progress <- data_numeric[data_numeric$DX.MCI == 1,]
     cn_progress$last_DX <- factor(ifelse(cn_progress$last_DX == 'Dementia',
                                          'Dementia', 'CN_MCI'),
                                   levels = c('CN_MCI', 'Dementia'))
 
-    cn_progress$DXCN <- NULL
-    cn_progress$DXDementia <- NULL
-    cn_progress$DXMCI <- NULL
+    cn_progress$DX.CN <- NULL
+    cn_progress$DX.Dementia <- NULL
+    cn_progress$DX.MCI <- NULL
 
   } else {
     stop('clinGroup needs to be either CN or MCI. Please try again.')
