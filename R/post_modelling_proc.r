@@ -11,7 +11,7 @@
 #' @return it returns a vector of five summary statistics.
 #' @export
 #'
-post_modelling_proc <- function(dat, totalnewprediction, totalprobabilities,
+post_modelling_proc <- function(dat, totalnewPrediction, totalprobabilities,
                                 clinGroup, mcPerf) {
 
   if (clinGroup == 'CN') {

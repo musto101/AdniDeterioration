@@ -56,7 +56,7 @@ model_deter <- function(dat, model, grid, mcRep, clinGroup) {
       test[,-1] <- predict(object = impute_test, test[,-1])
 
 
-      booted_training <- bootstrapping(training)
+      booted_training <- bootstrapping(training, n = 1000)
       # tuning
       ml_model <- train(last_DX ~ .,
                         data = booted_training, method = model,
@@ -77,7 +77,7 @@ model_deter <- function(dat, model, grid, mcRep, clinGroup) {
       totalprobabilities[folds[[n]]] <- evalResults$rf
     }
 
-    v <- post_modelling_proc(dat, totalnewprediction, totalprobabilities,
+    v <- post_modelling_proc(dat, totalnewPrediction, totalprobabilities,
                         clinGroup, mcPerf = mcPerf)
 
     names(v) <- c('ROC', 'Sens', 'Spec', 'Accuracy', 'Kappa')
