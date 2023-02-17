@@ -1,4 +1,7 @@
-data
-*.Rproj
+data/
+.Rproj
 *.Rproj.user
-.Rproj.user
+.Rproj.user/
+.vscode/
+env/
+*.py

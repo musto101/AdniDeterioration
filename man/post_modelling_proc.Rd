@@ -6,7 +6,7 @@
 \usage{
 post_modelling_proc(
   dat,
-  totalnewprediction,
+  totalnewPrediction,
   totalprobabilities,
   clinGroup,
   mcPerf
@@ -15,13 +15,13 @@ post_modelling_proc(
 \arguments{
 \item{dat}{a dataframe.}
 
-\item{totalnewprediction}{a matrix of predictions.}
-
 \item{totalprobabilities}{a matrix of prediction probabilities.}
 
 \item{clinGroup}{a string indicating the clinical group of interest.}
 
 \item{mcPerf}{is the performance from the pervious iteration.}
+
+\item{totalnewprediction}{a matrix of predictions.}
 }
 \value{
 it returns a vector of five summary statistics.

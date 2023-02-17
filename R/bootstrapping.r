@@ -1,16 +1,25 @@
-#' Boostrapping Data
-#'
-#' Samples data with replacement n amount of times.With n a user defined input.
-#'
-#' @param dat a dataframe.
-#' @param n a numeric value indicating the number of samples to take.
-#' @return It returns a datafame of length n of sampled rows from the original
-#' data.
-#' @export
-#'
-bootstrapping <- function(dat, n) {
+bootstrapping <- function(training, m, group) {
+  library(dplyr)
 
-  x <- dat %>% sample_n(replace = T, size = n)
+  training <- as_tibble(training)
+
+  x <- training %>%
+    group_by(last_DX) %>%
+    sample_n(replace = T, size = m)
+  x <- as.data.frame(x)
+
+  if (group == 'CN') {
+
+    x$last_DX <-  factor(x$last_DX, levels = c('CN', 'MCI_AD'))
+  } else if (group == 'MCI') {
+
+    x$last_DX <-  factor(x$last_DX, levels = c('CN_MCI', 'Dementia'))
+
+  } else {
+
+    stop('ERROR: Group is not recognised')
+
+  }
 
   return(x)
 }
